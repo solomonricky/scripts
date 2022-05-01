@@ -76,6 +76,9 @@ svn export https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass feeds
 # luci-app-cpufreq
 svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
 
+# luci-app-openclash
+git clone --single-branch --depth 1 -b dev https://github.com/vernesong/OpenClash.git package/new/luci-app-openclash
+
 # luci-app-passwall
 svn export https://github.com/solomonricky/openwrt-passwall/branches/luci-nodns/luci-app-passwall feeds/luci/applications/luci-app-passwall
 

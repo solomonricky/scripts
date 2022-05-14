@@ -4,6 +4,10 @@
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
+# luci-theme-argon
+git clone -b master --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
+
 # Autocore
 svn export https://github.com/immortalwrt/immortalwrt/branches/master/package/emortal/autocore feeds/packages/utils/autocore
 sed -i 's/"getTempInfo" /"getTempInfo", "getCPUBench", "getCPUUsage" /g' feeds/packages/utils/autocore/files/generic/luci-mod-status-autocore.json

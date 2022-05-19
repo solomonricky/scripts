@@ -40,6 +40,7 @@ rm -rf ./feeds/packages/net/v2raya
 rm -rf ./feeds/packages/net/xray-core
 rm -rf ./feeds/packages/net/xray-plugin
 rm -rf ./feeds/packages/net/dns2socks
+rm -rf ./feeds/packages/net/dns2tcp
 rm -rf ./feeds/packages/net/microsocks
 rm -rf ./feeds/packages/net/ipt2socks
 rm -rf ./feeds/packages/net/pdnsd-alt
@@ -53,6 +54,7 @@ svn export https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria feeds/pa
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks feeds/packages/net/ssocks
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go feeds/packages/net/trojan-go
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus feeds/packages/net/trojan-plus
+svn export https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core feeds/packages/net/xray-core
 svn export https://github.com/fw876/helloworld/trunk/naiveproxy feeds/packages/net/naiveproxy
 svn export https://github.com/immortalwrt/packages/trunk/net/shadowsocks-libev feeds/packages/net/shadowsocks-libev
 svn export https://github.com/fw876/helloworld/trunk/shadowsocks-rust feeds/packages/net/shadowsocks-rust
@@ -64,7 +66,7 @@ svn export https://github.com/fw876/helloworld/trunk/v2ray-core feeds/packages/n
 svn export https://github.com/fw876/helloworld/trunk/v2ray-geodata feeds/packages/net/v2ray-geodata
 svn export https://github.com/fw876/helloworld/trunk/v2ray-plugin feeds/packages/net/v2ray-plugin
 svn export https://github.com/fw876/helloworld/trunk/v2raya feeds/packages/net/v2raya
-svn export https://github.com/fw876/helloworld/trunk/xray-core feeds/packages/net/xray-core
+#svn export https://github.com/fw876/helloworld/trunk/xray-core feeds/packages/net/xray-core
 svn export https://github.com/fw876/helloworld/trunk/xray-plugin feeds/packages/net/xray-plugin
 svn export https://github.com/immortalwrt/packages/trunk/net/dns2socks feeds/packages/net/dns2socks
 svn export https://github.com/immortalwrt/packages/trunk/net/microsocks feeds/packages/net/microsocks
@@ -87,7 +89,7 @@ svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufr
 git clone --single-branch --depth 1 -b dev https://github.com/vernesong/OpenClash.git feeds/luci/applications/luci-app-openclash
 
 # luci-app-passwall
-svn export https://github.com/solomonricky/openwrt-passwall/branches/luci-nodns/luci-app-passwall feeds/luci/applications/luci-app-passwall
+svn export https://github.com/solomonricky/openwrt-passwall/branches/Xray-1.5.0/luci-app-passwall feeds/luci/applications/luci-app-passwall
 
 # luci-app-passwall2
 svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 feeds/luci/applications/luci-app-passwall2
@@ -96,7 +98,7 @@ svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwal
 svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-ramfree feeds/luci/applications/luci-app-ramfree
 
 # luci-app-ssr-plus
-svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus feeds/luci/applications/luci-app-ssr-plus
+svn export https://github.com/solomonricky/helloworld/branches/Xray-1.5.0/luci-app-ssr-plus feeds/luci/applications/luci-app-ssr-plus
 
 #luci-app-turboacc
 svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-turboacc feeds/luci/applications/luci-app-turboacc
@@ -109,6 +111,10 @@ svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-zerot
 
 # Change "Allow connection to 65535"
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
+
+# Timezone and Zonename
+sed -i "s|system.@system\\[-1\\].timezone='UTC'|system.@system\\[-1\\].timezone='UTC-8'\\
+                set system.@system[-1].zonename='Asia/Kuala Lumpur'|g" package/base-files/files/bin/config_generate
 
 # Update and Install Feeds
 ./scripts/feeds update -a

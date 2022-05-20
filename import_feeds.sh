@@ -54,7 +54,7 @@ svn export https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria feeds/pa
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks feeds/packages/net/ssocks
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go feeds/packages/net/trojan-go
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus feeds/packages/net/trojan-plus
-svn export https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core feeds/packages/net/xray-core
+svn export https://github.com/solomonricky/openwrt-passwall/branches/Xray-1.5.0/xray-core feeds/packages/net/xray-core
 svn export https://github.com/fw876/helloworld/trunk/naiveproxy feeds/packages/net/naiveproxy
 svn export https://github.com/immortalwrt/packages/trunk/net/shadowsocks-libev feeds/packages/net/shadowsocks-libev
 svn export https://github.com/fw876/helloworld/trunk/shadowsocks-rust feeds/packages/net/shadowsocks-rust
@@ -89,7 +89,7 @@ svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufr
 git clone --single-branch --depth 1 -b dev https://github.com/vernesong/OpenClash.git feeds/luci/applications/luci-app-openclash
 
 # luci-app-passwall
-svn export https://github.com/solomonricky/openwrt-passwall/branches/Xray-1.5.0/luci-app-passwall feeds/luci/applications/luci-app-passwall
+svn export https://github.com/solomonricky/openwrt-passwall/branches/luci-nodns/luci-app-passwall feeds/luci/applications/luci-app-passwall
 
 # luci-app-passwall2
 svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 feeds/luci/applications/luci-app-passwall2

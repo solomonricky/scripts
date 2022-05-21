@@ -4,19 +4,12 @@
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
-# luci-theme-argon
-git clone -b master --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
-git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
-
-# Autocore
-svn export https://github.com/immortalwrt/immortalwrt/branches/master/package/emortal/autocore feeds/packages/utils/autocore
-sed -i 's/"getTempInfo" /"getTempInfo", "getCPUBench", "getCPUUsage" /g' feeds/packages/utils/autocore/files/generic/luci-mod-status-autocore.json
-
-# Coremark
-rm -rf ./feeds/packages/utils/coremark
-svn export https://github.com/immortalwrt/packages/trunk/utils/coremark feeds/packages/utils/coremark
-
 # Remove some net packages
+rm -rf ./feeds/packages/net/dnsforwarder
+rm -rf ./feeds/luci/applications/luci-app-cpufreq
+rm -rf ./feeds/luci/applications/luci-app-ramfree
+rm -rf ./eeds/luci/applications/luci-app-turboacc
+rm -rf ./feeds/luci/applications/luci-app-zerotier
 rm -rf ./feeds/packages/net/https-dns-proxy
 rm -rf ./feeds/packages/net/kcptun
 rm -rf ./feeds/packages/net/shadowsocks-libev
@@ -45,6 +38,18 @@ rm -rf ./feeds/packages/net/microsocks
 rm -rf ./feeds/packages/net/ipt2socks
 rm -rf ./feeds/packages/net/pdnsd-alt
 rm -rf ./feeds/packages/net/redsocks2
+
+# luci-theme-argon
+git clone -b master --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
+
+# Autocore
+svn export https://github.com/immortalwrt/immortalwrt/branches/master/package/emortal/autocore feeds/packages/utils/autocore
+sed -i 's/"getTempInfo" /"getTempInfo", "getCPUBench", "getCPUUsage" /g' feeds/packages/utils/autocore/files/generic/luci-mod-status-autocore.json
+
+# Coremark
+rm -rf ./feeds/packages/utils/coremark
+svn export https://github.com/immortalwrt/packages/trunk/utils/coremark feeds/packages/utils/coremark
 
 # Dependencies
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/brook feeds/packages/net/brook

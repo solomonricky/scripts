@@ -28,6 +28,7 @@ rm -rf ./feeds/packages/net/ssocks
 rm -rf ./feeds/packages/net/trojan
 rm -rf ./feeds/packages/net/trojan-go
 rm -rf ./feeds/packages/net/trojan-plus
+rm -rf ./feeds/packages/net/sagernet-core
 rm -rf ./feeds/packages/net/naiveproxy
 rm -rf ./feeds/packages/net/shadowsocks-rust
 rm -rf ./feeds/packages/net/shadowsocksr-libev
@@ -53,6 +54,7 @@ svn export https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria feeds/pa
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks feeds/packages/net/ssocks
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go feeds/packages/net/trojan-go
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus feeds/packages/net/trojan-plus
+svn export https://github.com/xiaorouji/openwrt-passwall/trunk/sagernet-core feeds/packages/net/sagernet-core
 svn export https://github.com/fw876/helloworld/trunk/naiveproxy feeds/packages/net/naiveproxy
 svn export https://github.com/immortalwrt/packages/trunk/net/shadowsocks-libev feeds/packages/net/shadowsocks-libev
 svn export https://github.com/fw876/helloworld/trunk/shadowsocks-rust feeds/packages/net/shadowsocks-rust

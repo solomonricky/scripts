@@ -109,6 +109,9 @@ git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-vssr.git fee
 # luci-app-zerotier
 svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
 
+# IPv6 Helper
+svn export https://github.com/immortalwrt/immortalwrt/trunk/package/emortal/ipv6-helper package/addon/ipv6-helper
+
 # Change "Allow connection to 65535"
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 

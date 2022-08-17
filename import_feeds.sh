@@ -68,6 +68,7 @@ svn export https://github.com/fw876/helloworld/trunk/v2ray-plugin feeds/packages
 svn export https://github.com/fw876/helloworld/trunk/v2raya feeds/packages/net/v2raya
 svn export https://github.com/fw876/helloworld/trunk/xray-core feeds/packages/net/xray-core
 svn export https://github.com/fw876/helloworld/trunk/xray-plugin feeds/packages/net/xray-plugin
+svn export https://github.com/fw876/helloworld/trunk/lua-neturl feeds/packages/net/lua-neturl
 svn export https://github.com/immortalwrt/packages/trunk/net/dns2socks feeds/packages/net/dns2socks
 svn export https://github.com/immortalwrt/packages/trunk/net/microsocks feeds/packages/net/microsocks
 svn export https://github.com/immortalwrt/packages/trunk/net/ipt2socks feeds/packages/net/ipt2socks

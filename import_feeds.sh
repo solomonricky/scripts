@@ -4,6 +4,9 @@
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
+# Patch ARM64 name
+wget -P target/linux/generic/hack-5.15/ https://github.com/immortalwrt/immortalwrt/raw/master/target/linux/generic/hack-5.15/312-arm64-cpuinfo-Add-model-name-in-proc-cpuinfo-for-64bit-ta.patch
+
 # luci-theme-argon
 git clone -b master --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
@@ -112,6 +115,9 @@ git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-vssr.git fee
 
 # luci-app-zerotier
 svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
+
+# Mhz
+svn export https://github.com/immortalwrt/packages/trunk/utils/mhz feeds/packages/utils/mhz
 
 # IPv6 Helper
 svn export https://github.com/immortalwrt/immortalwrt/trunk/package/emortal/ipv6-helper package/addon/ipv6-helper

@@ -4,6 +4,9 @@
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
+# Patch ARM64 name
+wget -P target/linux/generic/hack-5.10/ https://github.com/immortalwrt/immortalwrt/raw/master/target/linux/generic/hack-5.10/312-arm64-cpuinfo-Add-model-name-in-proc-cpuinfo-for-64bit-ta.patch
+
 # luci-theme-argon
 git clone -b master --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
@@ -69,7 +72,7 @@ svn export https://github.com/fw876/helloworld/trunk/v2ray-core feeds/packages/n
 svn export https://github.com/fw876/helloworld/trunk/v2ray-geodata feeds/packages/net/v2ray-geodata
 svn export https://github.com/fw876/helloworld/trunk/v2ray-plugin feeds/packages/net/v2ray-plugin
 svn export https://github.com/fw876/helloworld/trunk/v2raya feeds/packages/net/v2raya
-svn export https://github.com/solomonricky/openwrt-passwall/trunk/xray-core feeds/packages/net/xray-core
+svn export https://github.com/solomonricky/openwrt-passwall/branches/xray-wss/xray-core feeds/packages/net/xray-core
 svn export https://github.com/fw876/helloworld/trunk/xray-plugin feeds/packages/net/xray-plugin
 svn export https://github.com/fw876/helloworld/trunk/lua-neturl feeds/packages/net/lua-neturl
 svn export https://github.com/immortalwrt/packages/trunk/net/dns2socks feeds/packages/net/dns2socks

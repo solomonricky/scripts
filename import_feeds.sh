@@ -119,9 +119,6 @@ svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-zerot
 # IPv6 Helper
 svn export https://github.com/immortalwrt/immortalwrt/trunk/package/emortal/ipv6-helper package/addon/ipv6-helper
 
-# UCI Default
-wget -P package/base-files/files/etc/uci-defaults/ https://github.com/solomonricky/openwrt/raw/bd0af05b8b13abed84a2a556f9047fa4d3e6a5a8/package/base-files/files/etc/uci-defaults/99_custom
-
 # Change "Allow connection to 65535"
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 

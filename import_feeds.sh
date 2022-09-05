@@ -10,17 +10,17 @@ wget -P target/linux/generic/hack-5.10/ https://github.com/immortalwrt/immortalw
 
 # Change to ImmortalWrt Uboot and target
 rm -rf ./target/linux/rockchip
-svn export https://github.com/coolsnowwolf/lede/trunk/target/linux/rockchip target/linux/rockchip
+svn export -r 5010 https://github.com/coolsnowwolf/lede/trunk/target/linux/rockchip target/linux/rockchip
 rm -rf ./target/linux/rockchip/Makefile
 wget -P target/linux/rockchip/ https://github.com/openwrt/openwrt/raw/openwrt-22.03/target/linux/rockchip/Makefile
 rm -rf ./target/linux/rockchip/patches-5.10/002-net-usb-r8152-add-LED-configuration-from-OF.patch
 rm -rf ./target/linux/rockchip/patches-5.10/003-dt-bindings-net-add-RTL8152-binding-documentation.patch
 
 rm -rf ./package/boot/uboot-rockchip
-svn export https://github.com/coolsnowwolf/lede/trunk/package/boot/uboot-rockchip package/boot/uboot-rockchip
+svn export -r 5010 https://github.com/coolsnowwolf/lede/trunk/package/boot/uboot-rockchip package/boot/uboot-rockchip
 sed -i '/r2c-rk3328:arm-trusted/d' package/boot/uboot-rockchip/Makefile
 
-svn export https://github.com/coolsnowwolf/lede/trunk/package/boot/arm-trusted-firmware-rockchip-vendor package/boot/arm-trusted-firmware-rockchip-vendor
+svn export -r 5010 https://github.com/coolsnowwolf/lede/trunk/package/boot/arm-trusted-firmware-rockchip-vendor package/boot/arm-trusted-firmware-rockchip-vendor
 
 rm -rf ./package/kernel/linux/modules/video.mk
 wget -P package/kernel/linux/modules/ https://github.com/immortalwrt/immortalwrt/raw/master/package/kernel/linux/modules/video.mk
@@ -90,7 +90,7 @@ svn export https://github.com/fw876/helloworld/trunk/v2ray-core feeds/packages/n
 svn export https://github.com/fw876/helloworld/trunk/v2ray-geodata feeds/packages/net/v2ray-geodata
 svn export https://github.com/fw876/helloworld/trunk/v2ray-plugin feeds/packages/net/v2ray-plugin
 svn export https://github.com/fw876/helloworld/trunk/v2raya feeds/packages/net/v2raya
-svn export https://github.com/fw876/helloworld/trunk/xray-core feeds/packages/net/xray-core
+svn export https://github.com/solomonricky/openwrt-passwall/branches/xtls-wss/xray-core feeds/packages/net/xray-core
 svn export https://github.com/fw876/helloworld/trunk/xray-plugin feeds/packages/net/xray-plugin
 svn export https://github.com/fw876/helloworld/trunk/lua-neturl feeds/packages/net/lua-neturl
 svn export https://github.com/immortalwrt/packages/trunk/net/dns2socks feeds/packages/net/dns2socks
@@ -108,7 +108,7 @@ svn export https://github.com/immortalwrt/packages/trunk/net/dnsforwarder feeds/
 svn export https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass feeds/luci/applications/luci-app-bypass
 
 # luci-app-cpufreq
-svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
+svn export -r 19495 https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
 
 # luci-app-openclash
 git clone --single-branch --depth 1 -b dev https://github.com/vernesong/OpenClash.git feeds/luci/applications/luci-app-openclash

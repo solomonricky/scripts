@@ -4,6 +4,9 @@
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
+# Enable IRQ Balance by default
+sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
+
 # luci-theme-argon
 git clone -b master --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
@@ -14,6 +17,7 @@ git clone -b master --depth 1 https://github.com/kiddin9/luci-theme-edge.git pac
 # Autocore
 svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/emortal/autocore feeds/packages/utils/autocore
 sed -i 's/"getTempInfo" /"getTempInfo", "getCPUBench", "getCPUUsage" /g' feeds/packages/utils/autocore/files/generic/luci-mod-status-autocore.json
+sed -i '/"$threads"/d' package/lean/autocore/files/x86/autocore feeds/packages/utils/autocore/files/x86/autocore
 
 # Coremark
 rm -rf ./feeds/packages/utils/coremark
@@ -83,6 +87,18 @@ svn export https://github.com/kiddin9/openwrt-bypass/trunk/lua-maxminddb feeds/p
 svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe package/kernel/shortcut-fe
 svn export https://github.com/immortalwrt/packages/trunk/net/dnsforwarder feeds/packages/net/dnsforwarder
 
+# Drivers
+# R8168 Driver
+git clone -b master --depth 1 https://github.com/BROBIRD/openwrt-r8168.git package/kernel/r8168
+patch -p1 <../PATCH/r8168/r8168-fix_LAN_led-for_r4s-from_TL.patch
+# R8152 Driver
+svn export https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel/r8152 package/kernel/r8152
+# r8125 Driver
+svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/r8125 package/kernel/r8125
+# igb-intel Driver
+svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/igb-intel package/kernel/igb-intel
+
+# LuCI
 # luci-app-bypass
 svn export https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass feeds/luci/applications/luci-app-bypass
 
@@ -122,3 +138,8 @@ sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 # Update and Install Feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a -f
+
+# Kernel Cryto Modules
+echo '
+CONFIG_CRYPTO_AES_NI_INTEL=y
+' >>./target/linux/x86/config-5.10

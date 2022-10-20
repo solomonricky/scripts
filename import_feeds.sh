@@ -15,8 +15,8 @@ git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-argon-config
 git clone -b master --depth 1 https://github.com/kiddin9/luci-theme-edge.git package/new/luci-theme-edge
 
 # Autocore
-svn export -r 219750 https://github.com/1715173329/imoutowrt/branches/master-ax3000-5.15/package/emortal/autocore feeds/packages/utils/autocore
-sed -i 's/"getTempInfo" /"getTempInfo", "getCPUBench", "getCPUUsage" /g' feeds/packages/utils/autocore/files/generic/luci-mod-status-autocore.json
+# svn export -r 219750 https://github.com/1715173329/imoutowrt/branches/master-ax3000-5.15/package/emortal/autocore feeds/packages/utils/autocore
+sed -i 's/"getTempInfo" /"getTempInfo", "getCPUBench", "getCPUUsage" /g' package/emortal/autocore/files/generic/luci-mod-status-autocore.json
 
 # Coremark
 rm -rf ./feeds/packages/utils/coremark

@@ -16,7 +16,7 @@ git clone -b master --depth 1 https://github.com/kiddin9/luci-theme-edge.git pac
 
 # Autocore
 # svn export -r 219750 https://github.com/1715173329/imoutowrt/branches/master-ax3000-5.15/package/emortal/autocore feeds/packages/utils/autocore
-sed -i 's/"getTempInfo" /"getTempInfo", "getCPUBench", "getCPUUsage" /g' package/emortal/autocore/files/generic/luci-mod-status-autocore.json
+sed -i 's/"getTempInfo" /"getTempInfo", "getCPUBench", "getCPUUsage" /g' feeds/packages/utils/autocore/files/generic/luci-mod-status-autocore.json
 
 # Coremark
 rm -rf ./feeds/packages/utils/coremark
@@ -118,7 +118,7 @@ git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-vssr.git fee
 svn export https://github.com/immortalwrt/luci/branches/master/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
 
 # Mhz
-svn export https://github.com/immortalwrt/packages/trunk/utils/mhz feeds/packages/utils/mhz
+# svn export https://github.com/immortalwrt/packages/trunk/utils/mhz feeds/packages/utils/mhz
 
 # IPv6 Helper
 svn export https://github.com/immortalwrt/immortalwrt/trunk/package/emortal/ipv6-helper package/addon/ipv6-helper

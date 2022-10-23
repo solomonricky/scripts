@@ -115,7 +115,7 @@ svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus feeds/luc
 git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-vssr.git feeds/luci/applications/luci-app-vssr
 
 # luci-app-zerotier
-svn export https://github.com/immortalwrt/luci/branches/master/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
 
 # Mhz
 svn export https://github.com/immortalwrt/packages/trunk/utils/mhz feeds/packages/utils/mhz

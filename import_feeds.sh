@@ -83,12 +83,12 @@ svn export https://github.com/immortalwrt/packages/trunk/net/pdnsd-alt feeds/pac
 svn export https://github.com/immortalwrt/packages/trunk/net/redsocks2 feeds/packages/net/redsocks2
 svn export https://github.com/immortalwrt/packages/trunk/net/https-dns-proxy feeds/packages/net/https-dns-proxy
 svn export https://github.com/immortalwrt/packages/trunk/net/kcptun feeds/packages/net/kcptun
-svn export https://github.com/kiddin9/openwrt-bypass/trunk/lua-maxminddb feeds/packages/net/lua-maxminddb
+# svn export https://github.com/kiddin9/openwrt-bypass/trunk/lua-maxminddb feeds/packages/net/lua-maxminddb
 svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe package/kernel/shortcut-fe
 svn export https://github.com/immortalwrt/packages/trunk/net/dnsforwarder feeds/packages/net/dnsforwarder
 
 # luci-app-bypass
-svn export https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass feeds/luci/applications/luci-app-bypass
+# svn export https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass feeds/luci/applications/luci-app-bypass
 
 # luci-app-cpufreq
 svn export -r 19495 https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
@@ -115,7 +115,7 @@ svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus feeds/luc
 git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-vssr.git feeds/luci/applications/luci-app-vssr
 
 # luci-app-zerotier
-svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
+svn export https://github.com/immortalwrt/luci/branches/master/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
 
 # Mhz
 svn export https://github.com/immortalwrt/packages/trunk/utils/mhz feeds/packages/utils/mhz

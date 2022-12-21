@@ -4,20 +4,8 @@
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
-# luci-theme-argon
-git clone -b master --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
-git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
-
 # luci-theme-edge
 git clone -b master --depth 1 https://github.com/kiddin9/luci-theme-edge.git package/new/luci-theme-edge
-
-# Autocore
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/emortal/autocore feeds/packages/utils/autocore
-sed -i 's/"getTempInfo" /"getTempInfo", "getCPUBench", "getCPUUsage" /g' feeds/packages/utils/autocore/files/generic/luci-mod-status-autocore.json
-
-# Coremark
-rm -rf ./feeds/packages/utils/coremark
-svn export https://github.com/immortalwrt/packages/trunk/utils/coremark feeds/packages/utils/coremark
 
 # Remove some net packages
 rm -rf ./feeds/packages/net/https-dns-proxy
@@ -48,6 +36,7 @@ rm -rf ./feeds/packages/net/microsocks
 rm -rf ./feeds/packages/net/ipt2socks
 rm -rf ./feeds/packages/net/pdnsd-alt
 rm -rf ./feeds/packages/net/redsocks2
+rm -rf ./feeds/packages/net/dnsforwarder
 
 # Dependencies
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/brook feeds/packages/net/brook
@@ -87,7 +76,7 @@ svn export https://github.com/immortalwrt/packages/trunk/net/dnsforwarder feeds/
 # svn export https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass feeds/luci/applications/luci-app-bypass
 
 # luci-app-cpufreq
-svn export -r 19495 https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
+# svn export -r 19495 https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
 
 # luci-app-openclash
 git clone --single-branch --depth 1 -b dev https://github.com/vernesong/OpenClash.git feeds/luci/applications/luci-app-openclash
@@ -96,10 +85,10 @@ git clone --single-branch --depth 1 -b dev https://github.com/vernesong/OpenClas
 svn export https://github.com/solomonricky/openwrt-passwall/branches/luci-nodns/luci-app-passwall feeds/luci/applications/luci-app-passwall
 
 # luci-app-passwall2
-svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 feeds/luci/applications/luci-app-passwall2
+# svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 feeds/luci/applications/luci-app-passwall2
 
 # luci-app-ramfree
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-ramfree feeds/luci/applications/luci-app-ramfree
+# svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-ramfree feeds/luci/applications/luci-app-ramfree
 
 # luci-app-ssr-plus
 svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus feeds/luci/applications/luci-app-ssr-plus
@@ -111,10 +100,10 @@ svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus feeds/luc
 git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-vssr.git feeds/luci/applications/luci-app-vssr
 
 # luci-app-zerotier
-svn export https://github.com/immortalwrt/luci/branches/master/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
+# svn export https://github.com/immortalwrt/luci/branches/master/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
 
 # IPv6 Helper
-svn export https://github.com/immortalwrt/immortalwrt/trunk/package/emortal/ipv6-helper package/addon/ipv6-helper
+# svn export https://github.com/immortalwrt/immortalwrt/trunk/package/emortal/ipv6-helper package/addon/ipv6-helper
 
 # Change "Allow connection to 65535"
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf

@@ -15,7 +15,7 @@ git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-argon-config
 git clone -b master --depth 1 https://github.com/kiddin9/luci-theme-edge.git package/new/luci-theme-edge
 
 # Autocore
-svn export https://github.com/1715173329/imoutowrt/branches/master-ax3000-5.15/package/emortal/autocore feeds/packages/utils/autocore
+svn export https://github.com/immortalwrt/immortalwrt/branches/master/package/emortal/autocore feeds/packages/utils/autocore
 sed -i 's/"getTempInfo" /"getTempInfo", "getCPUBench", "getCPUUsage" /g' feeds/packages/utils/autocore/files/generic/luci-mod-status-autocore.json
 
 # Mhz
@@ -119,9 +119,6 @@ git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-vssr.git fee
 
 # luci-app-zerotier
 svn export https://github.com/immortalwrt/luci/branches/master/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
-
-# Mhz
-svn export https://github.com/immortalwrt/packages/trunk/utils/mhz feeds/packages/utils/mhz
 
 # IPv6 Helper
 svn export https://github.com/immortalwrt/immortalwrt/trunk/package/emortal/ipv6-helper package/addon/ipv6-helper

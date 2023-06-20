@@ -83,3 +83,7 @@ ln -sf ../../../feeds/packages/net/kcptun ./package/feeds/packages/kcptun
 cp -rf ../ssrp/luci-app-ssr-plus ./package/new/luci-app-ssr-plus
 
 cp -rf ../immortalwrt_luci/applications/luci-app-zerotier ./feeds/luci/applications/luci-app-zerotier
+
+# Update and Install Feeds
+./scripts/feeds update -a
+./scripts/feeds install -a -f

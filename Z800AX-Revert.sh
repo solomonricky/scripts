@@ -18,7 +18,7 @@ if [ "$ACTUAL_SHA256" == "$EXPECTED_SHA256" ]; then
     # Prompt user for confirmation
     read -p "Do you confirm you want to revert to stock firmware (Y/N)? " CONFIRM
     if [ "$CONFIRM" == "Y" ] || [ "$CONFIRM" == "y" ]; then
-        mtd write /tmp/rootfs.bin rootfs_1 && mtd -r write /tmp/rootfs.bin rootfs
+        mtd write $FILE rootfs_1 && mtd -r write $FILE rootfs
     else
         echo "Operation cancelled by user."
     fi
